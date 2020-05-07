@@ -4,7 +4,7 @@ R ?= R --vanilla -q
 FIND ?= find
 ECHO ?= echo -e
 
-default: clean install
+default: clean test install
 
 clean:
 	$(RM) -rv build autom4te.cache config.log config.status src/Makevars ..Rcheck
@@ -26,7 +26,7 @@ check: prepare clean
 test:
 	$(R) -e "devtools::test()"
 
-build: prepare document clean
+build: prepare document
 	$(R) CMD build --no-build-vignettes .
 
 install: prepare document
