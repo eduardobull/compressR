@@ -1,0 +1,18 @@
+arch: amd64
+os: linux
+dist: bionic
+compiler: clang
+language: r
+r:
+  - release
+  - oldrel
+  - devel
+r_check_args: --no-build-vignettes --no-manual
+r_build_args: --no-build-vignettes --no-manual --no-resave-data
+warnings_are_errors: false
+cache:
+  packages: true
+addons:
+  apt:
+    packages:
+      - cmake
