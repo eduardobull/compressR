@@ -1,7 +1,7 @@
 include Makevars.mk
 
 ZSTD_SRC_DIR:=third_party/zstd-${ZSTD_VERSION}
-ZSTD_BUILD_DIR:=$(shell mktemp -d -t R_compressR_XXXXXXXX)
+ZSTD_BUILD_DIR:=../build
 
 CC=`"${R_HOME}/bin/R" CMD config CC`
 CFLAGS=`"${R_HOME}/bin/R" CMD config CFLAGS` -fPIC
