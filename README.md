@@ -39,4 +39,4 @@ stopifnot(identical(mtcars, zst))
 Links
 -----
 
--   [zstandard official site](http://facebook.github.io/zstd/)
+-   [Zstandard official site](http://facebook.github.io/zstd/)
