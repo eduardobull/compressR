@@ -28,8 +28,8 @@ data(mtcars)
 file_dir <- tempfile()
 
 # Package usage
-saveZstd(mtcars, file_dir)
-mtcars.zst <- readZstd(file_dir)
+saveZST(mtcars, file_dir)
+mtcars.zst <- readZST(file_dir)
 
 # Test code
 stopifnot(identical(mtcars, zst))
