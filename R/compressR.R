@@ -30,7 +30,7 @@ compressZstd <- function(object, level = 3, raw = FALSE) {
 uncompressZstd <- function(object, raw = FALSE) {
   ret <- impl_zstdUncompress(object)
   if (!isTRUE(raw))
-    ret <- unserialize(object)
+    ret <- unserialize(ret)
 
   ret
 }
