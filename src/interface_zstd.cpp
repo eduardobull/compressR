@@ -26,17 +26,15 @@ RawVector impl_zstdCompress(RObject object, int level)
     }
 
     auto buffer_size = ZSTD_compressBound(src.size());
-    auto buffer = new char[buffer_size];
-    // auto buffer = std::unique_ptr<char[]>(new char[buffer_size]);
+    auto buffer = std::unique_ptr<char[]>(new char[buffer_size]);
 
-    auto output_size = ZSTD_compress(buffer, buffer_size,
+    auto output_size = ZSTD_compress(buffer.get(), buffer_size,
                                      src.begin(), src.size(),
                                      level);
     if (ZSTD_isError(output_size))
         stop("internal error in ZSTD_compress(): %s", ZSTD_getErrorName(output_size));
 
-    auto output = RawVector(buffer, buffer + output_size / sizeof(*buffer));
-    delete[] buffer;
+    auto output = RawVector(buffer.get(), buffer.get() + output_size / sizeof(*buffer.get()));
 
     return output;
 }

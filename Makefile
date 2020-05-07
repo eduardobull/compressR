@@ -23,6 +23,9 @@ document:
 check: prepare clean
 	_R_CHECK_CRAN_INCOMING_REMOTE_=false $(R) CMD check --as-cran --ignore-vignettes --no-stop-on-test-error .
 
+test:
+	$(R) -e "devtools::test()"
+
 build: prepare document clean
 	$(R) CMD build --no-build-vignettes .
 
@@ -32,7 +35,7 @@ install: prepare document
 uninstall:
 	$(R) CMD REMOVE compressR || true
 
-release: prepare document clean
+release: prepare document test clean
 
 install_remote:
 	$(R) -e "devtools::install_github('eduardobull/compressR', force = TRUE)"
