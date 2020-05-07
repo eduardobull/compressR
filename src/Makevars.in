@@ -13,8 +13,8 @@ $(SHLIB): ${ZSTD_BUILD_DIR}/lib/libzstd.a
 
 ${ZSTD_BUILD_DIR}/lib/libzstd.a:
 ifneq (@HAS_ZSTD@,1)
-	-mkdir ${ZSTD_BUILD_DIR}
-	cd ${ZSTD_BUILD_DIR} &&\
+	mkdir ${ZSTD_BUILD_DIR} &&\
+		cd ${ZSTD_BUILD_DIR} &&\
 		cmake ../src/${ZSTD_SRC_DIR}/build/cmake/ \
 			-DCMAKE_CXX_FLAGS="${CXXFLAGS}" \
 			-DCMAKE_C_FLAGS="${CFLAGS}" \
