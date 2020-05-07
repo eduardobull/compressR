@@ -32,7 +32,7 @@ saveZST(mtcars, file_dir)
 mtcars.zst <- readZST(file_dir)
 
 # Test code
-stopifnot(identical(mtcars, zst))
+stopifnot(identical(mtcars, mtcars.zst))
 ```
 
 
