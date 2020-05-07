@@ -1,0 +1,4 @@
+ZSTD_VERSION=1.4.4
+
+ZSTD_SRC_DIR:=third_party/zstd-${ZSTD_VERSION}
+ZSTD_BUILD_DIR:=../build

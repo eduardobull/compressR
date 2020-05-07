@@ -1,0 +1,21 @@
+Package: compressR
+Type: Package
+Title: Compression and decompression using the Zstandard algorithm
+Version: 0.1
+Date: 2020-04-18
+Maintainer: Eduardo Gutierres <eduardo.bull@gmail.com>
+Authors@R: c(
+  person("Eduardo", "Gutierres", email = "eduardo.bull@gmail.com", role = c("aut", "cre", "cph")),
+  person("Facebook, Inc.", role = "cph", comment = "Bundled Zstandard code"))
+Description: Compress and decompress data using the Zstandard official C library.
+License: MIT + file LICENSE
+Copyright: This package includes sources of the Zstandard C library owned by Facebook, Inc.
+LazyLoad: yes
+Depends: R (>= 3.3.0)
+LinkingTo: Rcpp
+Imports: Rcpp
+Suggests: testthat
+RoxygenNote: 7.1.0
+Encoding: UTF-8
+NeedsCompilation: yes
+SystemRequirements: C++11, cmake (>= 3.0.0)
