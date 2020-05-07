@@ -2,13 +2,13 @@
 % Please edit documentation in R/save.R
 \name{save}
 \alias{save}
-\alias{saveZstd}
-\alias{readZstd}
+\alias{saveZST}
+\alias{readZST}
 \title{Faster Serialization Interface for Single Objects}
 \usage{
-saveZstd(object, file, level = 3)
+saveZST(object, file, level = 3)
 
-readZstd(file)
+readZST(file)
 }
 \arguments{
 \item{object}{Object to compress.}
@@ -18,9 +18,9 @@ readZstd(file)
 \item{level}{Integer. Compression level.}
 }
 \value{
-For \code{saveZstd}, NULL invisibly.
+For \code{saveZST}, NULL invisibly.
 
-  For \code{readZstd}, the uncompressed and unserialized \code{R} object.
+  For \code{readZST}, the uncompressed and unserialized \code{R} object.
 }
 \description{
 Functions to write a single \code{R} object to a file and

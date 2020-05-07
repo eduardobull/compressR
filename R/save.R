@@ -9,9 +9,9 @@
 #' @param level Integer. Compression level.
 #'
 #' @return
-#'   For \code{saveZstd}, NULL invisibly.
+#'   For \code{saveZST}, NULL invisibly.
 #'
-#'   For \code{readZstd}, the uncompressed and unserialized \code{R} object.
+#'   For \code{readZST}, the uncompressed and unserialized \code{R} object.
 #'
 #' @seealso
 #'   \code{\link{serialize}}, \code{\link{saveRDS}} and \code{\link{loadRDS}}.
@@ -21,12 +21,12 @@ NULL
 
 #' @rdname save
 #' @export
-saveZstd <- function(object, file, level = 3) {
-  writeBin(compressZstd(object.comp), file)
+saveZST <- function(object, file, level = 3) {
+  writeBin(compressZstd(object), file)
 }
 
 #' @rdname save
 #' @export
-readZstd <- function(file) {
+readZST <- function(file) {
   uncompressZstd(readBin(file, "raw", n = file.size(file)))
 }
